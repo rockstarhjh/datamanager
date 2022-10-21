@@ -1,0 +1,82 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+<div class="container-fluid px-4">
+<div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa-regular fa-circle-exclamation"></i>
+    </button>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{#{{ product_info }}#}
+{#<button id="btn_toggle" class="nav-link collapsed btn btn-outline-secondary"><i class="fa-sharp fa-solid fa-pen"></i>단가변동 등록하기</button>#}
+{#<div id="Toggle" style="display:none" class="collapse">#}
+{#<div class="col-xl-8">#}
+{#    <form action="/price/" method="POST" >#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#    <label for="inputFirstName" style = "display: none">{{ form.idprice.label}}</label>#}
+{#         {{ form.idprice}}#}
+{#    <input type="hidden" name="idproducts" class="form-control" id="id_idproducts">#}
+{#    <label for="inputFirstName">{{ form.buyprice.label}}</label>#}
+{#     {{ form.buyprice}}#}
+{#     <label for="inputFirstName">{{ form.renew_bp_date.label}}</label>#}
+{#         {{ form.renew_bp_date|add_class:"datepicker"}}#}
+{#    <label for="inputFirstName">{{ form.sellprice.label}}</label>#}
+{#         {{ form.sellprice}}#}
+{#    <label for="inputFirstName">{{ form.renew_sp_date.label}}</label>#}
+{#     {{ form.renew_sp_date|add_class:"datepicker"}}#}
+{#    <label for="inputFirstName">{{ form.remark.label}}</label>#}
+{#         {{ form.remark}}#}
+{#    <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">등록</button>#}
+{#    </form>#}
+{#</div>#}
+{#</div>#}
+{#    <hr>#}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+            제품 단가
+        </div>
+        <div class="card-body">
+           <table id="priceTable" class="cell-border stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>카테고리</th>
+                        <th>제품명</th>
+                        <th>매입단가</th>
+                        <th>매입갱신일</th>
+                        <th>매출단가</th>
+                        <th>매출갱신일</th>
+                        <th>수익률</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>아이디</th>
+                        <th>카테고리</th>
+                        <th>제품명</th>
+                        <th>매입단가</th>
+                        <th>매입갱신일</th>
+                        <th>매출단가</th>
+                        <th>매출갱신일</th>
+                        <th>수익률</th>
+                        <th>비고</th>
+                    </tr>
+                </tfoot>
+           </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+		<form>
+			
+		<!-- search -->
+		<table class="searchBox">
+			<caption>조회</caption>
+			<colgroup>
+				<col width="123px">
+				<col width="*">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>조회기간</th>
+					<td>
+						<ul class="searchDate" style="padding-left: 0px">
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType1" onclick="setSearchDate('0d')"/>
+									<label for="dateType1">당일</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType2" onclick="setSearchDate('1w')"/>
+									<label for="dateType2">1주</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType3" onclick="setSearchDate('2w')"/>
+									<label for="dateType3">2주</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType4" onclick="setSearchDate('1m')"/>
+									<label for="dateType4">1개월</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType5" onclick="setSearchDate('3m')"/>
+									<label for="dateType5">3개월</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType6" onclick="setSearchDate('6m')"/>
+									<label for="dateType6">6개월</label>
+								</span>
+							</li>
+							<li>
+								<span class="chkbox2">
+									<input type="radio" name="dateType" id="dateType7" onclick="setSearchDate('1y')"/>
+									<label for="dateType7">1년</label>
+								</span>
+							</li>
+						</ul>
+						
+						<div class="clearfix">
+							<!-- 시작일 -->
+							<span class="dset">
+								<input type="text" class="datepicker inpType" name="searchStartDate" id="searchStartDate" >
+								<a href="#none" class="btncalendar dateclick">달력</a>
+							</span>
+							<span class="demi">~</span>
+							<!-- 종료일 -->
+							<span class="dset">
+								<input type="text" class="datepicker inpType" name="searchEndDate" id="searchEndDate" >
+								<a href="#none" class="btncalendar dateclick">달력</a>
+							</span>
+						</div>
+					</td>
+				</tr>
+			<tbody>
+		</table>
+		</form>

@@ -1,0 +1,41 @@
+{% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>대하테크윈 데이터관리</title>
+
+
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script> <!--데이터피커 사용을 위해 -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="{% static 'DataTables/datatables.min.js' %}"></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b783b9eb7.js" crossorigin="anonymous"></script>
+
+    <link href="{% static 'css/date-search.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/datepicker.css' %}" rel="stylesheet" />
+     <script src="{% static 'js/date-search.js' %}"></script>
+
+    <link href="{% static 'css/datepicker.css' %}" rel="stylesheet" />
+     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <script>
+        //csrf 토큰 생성
+      $.ajaxSetup({
+        headers: { "X-CSRFToken": '{{csrf_token}}' }
+      });
+      //폼 서브밋 엔터키 방지
+      $(document).keypress(function(event) {
+         if (event.key === "Enter") {
+           event.preventDefault();   // Do something
+         }
+      });
+</script>
+    <script>
+    let csrf = '{{ csrf_token }}';
+</script>
+</head>

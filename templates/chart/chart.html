@@ -1,0 +1,75 @@
+{% extends 'datamanager/base3.html' %}
+{% load rest_framework %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+    <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+{% endfor %}
+{% endif %}
+    <div>
+    <div class="input-group mt-4">
+        <div class="row">
+            <p>연별 및 월별에서 원하는 년도를 선택하세요. 둘중 하나만 선택. 연별의 간격은 선택된 년도부터 이전으로 보고싶은 값. 월별의 간격은 몇개월치를 볼건지 선택. 선택안할시 기본값으로 6개의 데이터를 보여줍니다.</p>
+            <div class="container-fluid row">
+            <div class="d-flex mt-2">
+            <span class="p-2">연별</span>
+              <select name="year" id="year">
+                  <option value=""></option>
+                    {% for i in data.year_list %}
+                      <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+              </select>
+            <span class="p-2">간격</span>
+              <select name="year_gap" id="year_gap">
+                  <option value=""></option>
+                  <option value="6">6</option>
+                  <option value="12">12</option>
+              </select>
+            <span class="p-2">구분</span>
+              <select name="chartDivision" id="chartDivision">
+                  <option value=""></option>
+                  <option value="매출">매출</option>
+                  <option value="매입">매입</option>
+                  <option value="순이익">순이익</option>
+              </select>
+            </div>
+{#            <div class="container-fluid">#}
+            <div class="d-flex mt-2">
+            <span class="p-2">월별</span>
+              <select name="month" id="month">
+                  <option value=""></option>
+                    {% for i in data.year_list %}
+                      <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+              </select>
+            <span class="p-2">간격</span>
+              <select name="month_gap" id="month_gap">
+                  <option value=""></option>
+                  <option value="6">6</option>
+                  <option value="12">12</option>
+              </select>
+
+            <button class="btn btn-primary btn-block ms-3" id="searchChart" title="" style="text-align:center">검색</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{#<hr>#}
+
+{#<div class="container-fluid px-4">#}
+    <div class="card mb-4 mt-2">
+        <div class="card-header" id="searchHeader"><i class="fas fa-chart-bar me-1"></i></div>
+        <div class="card-body"><canvas id="drawChart" width="100%" height="40"></canvas></div>
+    </div>
+{#</div>#}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'datamanager/base2.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+<div class="container-fluid px-4">
+{#                    <ol class="breadcrumb mb-4">#}
+{#                        <li class="breadcrumb-item active">Dashboard</li>#}
+{#                    </ol>#}
+<div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa-regular fa-circle-exclamation"></i>
+    </button>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<button id="btn_toggle" class="nav-link collapsed btn btn-outline-secondary"><i class="fa-sharp fa-solid fa-pen"></i>새거래처등록하기</button>
+<div id="Toggle" style="display:none" class="collapse">
+<div class="col-xl-8">
+    <form action="/company/" method="POST" >
+        {% csrf_token %}
+        <input hidden="hidden" />
+{#        {% for field in form %}#}
+{#        <div class="row mb-3">#}
+{#              <div class="form-floating mb-3">#}
+{#                <div class="form-floating mb-3 mb-md-0">#}
+{#                    {{ field|add_class:"form-control" }}#}
+{#                                                      <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />#}
+{#                    <label for="inputFirstName">{{ field.label }}</label>#}
+{#                </div>#}
+{#              </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+        {{ form.as_p}}
+        <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">등록</button>
+    </form>
+</div>
+</div>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            거래처 목록
+        </div>
+        <div class="card-body">
+           <table id="comTable" class="cell-border stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>상호</th>
+                        <th>전화번호</th>
+                        <th>팩스</th>
+                        <th>주소</th>
+                        <th>배달정보</th>
+                        <th>이메일</th>
+                        <th>구분</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <th>아이디</th>
+                        <th>상호</th>
+                        <th>전화번호</th>
+                        <th>팩스</th>
+                        <th>주소</th>
+                        <th>배달정보</th>
+                        <th>이메일</th>
+                        <th>구분</th>
+                    </tr>
+                </tfoot>
+           </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

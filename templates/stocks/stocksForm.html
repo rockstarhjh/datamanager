@@ -1,0 +1,128 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+ {% if messages %}
+{% for message in messages %}
+    <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+{% endfor %}
+    {% endif %}
+{#<h1>{{ data.idstocks}}</h1>#}
+    <form action="/stocks/{{ data.idstocks }}/" method="POST" >
+        {% csrf_token %}
+    <label for="inputFirstName" style = "display: none">{{ form.idproducts.label}}</label>
+         {{ form.idproducts|attr:"style : visibility :hidden"}}
+{#    <input type="hidden" name="idproducts" class="form-control" id="id_idproducts">#}
+     <label for="inputFirstName">{{ form.date.label}}</label>
+         {{ form.date|add_class:"datepicker"}}
+    <label for="inputFirstName">{{ form.category.label}}</label>
+         {{ form.category}}
+    <label for="inputFirstName">{{ form.p_name.label}}</label>
+    <div class="search-box">
+    <button type="button" id="btn_p_name"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <span>(목록에서 선택하세요. 직접입력 X)</span>
+         {{ form.p_name}}
+    </div>
+    <label for="inputFirstName">{{ form.company.label}}</label>
+    <div class="search-box">
+    <button type="button" id="btn_com"><i class="fa-solid fa-magnifying-glass"></i></button>
+         {{ form.company}}
+    </div>
+    <label for="inputFirstName">{{ form.in_field.label}}</label>
+         {{ form.in_field}}
+    <label for="inputFirstName">{{ form.out_field.label}}</label>
+         {{ form.out_field}}
+    <label for="inputFirstName">{{ form.return_field.label}}</label>
+         {{ form.return_field}}
+    <label for="inputFirstName">{{ form.lost_field.label}}</label>
+         {{ form.lost_field}}
+    <label for="inputFirstName">{{ form.location.label}}</label>
+    <select class="form-control" name="location" id="id_location">
+        <option value="사무실">사무실</option>
+        <option value="창고">창고</option>
+    </select>
+{#         {{ form.location}}#}
+    <label for="inputFirstName">{{ form.remark.label}}</label>
+         {{ form.remark}}
+    <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">수정</button>
+    </form>
+<hr>
+        <button id="deleteStocks" class="btn btn btn-outline-secondary" value="{{ data.idstocks }}">삭제</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">검색된 거래처</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="comModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>상호</th>
+                    <th>사업자번호</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>아이디</th>
+                    <th>상호</th>
+                    <th>사업자번호</th>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="Modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">검색된 거래처</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="p_nameModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>카테고리</th>
+                    <th>제품명</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>아이디</th>
+                    <th>카테고리</th>
+                    <th>제품명</th>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

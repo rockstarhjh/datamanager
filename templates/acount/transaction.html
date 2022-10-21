@@ -1,0 +1,570 @@
+﻿{#천단위 표시 #}
+{% load humanize %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Excel.Sheet">
+<meta name="Generator" content="Aspose.Cell 22.8">
+<link rel="stylesheet" type="text/css" href="{% static 'css/transaction.css' %}" media="all">
+</head>
+<body link='blue' vlink='purple' class='x26'>
+
+<table border='0' cellpadding='0' cellspacing='0' width='752' style='border-collapse: 
+ collapse;table-layout:fixed;width:564pt'>
+ <col class='x25' width='10' span='8' style='mso-width-source:userset;background:none;width:7.5pt'>
+ <col class='x25' width='11' span='2' style='mso-width-source:userset;background:none;width:8.25pt'>
+ <col class='x25' width='10' span='62' style='mso-width-source:userset;background:none;width:7.5pt'>
+ <col width='10' span='3' style='width:7.5pt'>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td colspan='75' height='18' class='x25' width='752' style='mso-ignore:colspan;height:14.1pt;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='17' class='x21' style='mso-ignore:colspan;'></td>
+<td colspan='36' rowspan='2' height='36' class='x23' style='height:27.45pt;'>거래명세서 (공급받는자 보관용)</td>
+<td colspan='17' class='x22' style='mso-ignore:colspan;border-right:1px solid #0000FF;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='17' class='x27' style='mso-ignore:colspan;'></td>
+<td colspan='17' class='x28' style='mso-ignore:colspan;border-right:1px solid #0000FF;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' class='x31' style='border-bottom:1px solid #0000FF;'>발행일자</td>
+<td class='x33'></td>
+<td colspan='4' class='x34' style='border-bottom:1px solid #0000FF;'><a name="년도" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.aco_date|slice:":4" }}</span></a></td>
+<td colspan='2' class='x33' style='mso-ignore:colspan;'>년</td>
+<td colspan='3' class='x35' style='border-bottom:1px solid #0000FF;'><a name="월" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.aco_date|slice:"5:7"}}</span></a></td>
+<td colspan='2' class='x33' style='mso-ignore:colspan;'>월</td>
+<td colspan='3' class='x35' style='border-bottom:1px solid #0000FF;'><a name="일" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.aco_date|slice:"8:10"}}</span></a></td>
+<td colspan='2' class='x33' style='mso-ignore:colspan;'>일</td>
+<td colspan='46' class='x33' style='mso-ignore:colspan;border-right:1px solid #0000FF;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='2' rowspan='10' height='170' class='x37' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:127.5pt;'>공</br>급</br>받</br>는</br>자</td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>등록번호</td>
+<td colspan='26' rowspan='2' height='35' class='x39' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'><a name="등록번호" ><span style='font-size:13pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_comnum }}</span></a></td>
+<td colspan='2' rowspan='10' height='170' class='x37' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:127.5pt;'>공</br>급</br>자</td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>등록번호</td>
+<td colspan='26' rowspan='2' height='36' class='x40' width='260' style='text-align: left;height:27.45pt;width:195pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:1;margin-left:209px;margin-top:9px;width:86px;height:85px'><img width='86' height='85' src="{% static 'assets/img/stamp.png' %}" name='그림 1'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='26' rowspan='2' height='36' class='x167' width='260' style='height:27.45pt;width:195pt;'>606-81-67297</td></tr></table></span></td>
+<td colspan='4' class='x42' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x42' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>상호</td>
+<td colspan='14' rowspan='2' height='36' class='x45' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'><a name="상호" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_name }}</span></a></td>
+<td colspan='4' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>성명</td>
+<td colspan='8' rowspan='2' height='36' class='x45' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'><a name="대표자" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_ceo }}</span></a></td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>상호</td>
+<td colspan='12' rowspan='2' height='36' class='x45' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'>㈜대하테크윈</td>
+<td colspan='4' rowspan='2' height='36' class='x48' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'>성명</td>
+<td colspan='10' rowspan='2' height='36' class='x51' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'>황대영</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>주소</td>
+<td colspan='26' rowspan='2' height='36' class='x61' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'><a name="주소" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_address }}</span></a></td>
+<td colspan='7' rowspan='2' height='35' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.7pt;'>주소</td>
+<td colspan='26' rowspan='2' height='36' class='x45' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:27.45pt;'>부산 사상 괘법578 산업용품상가 4-107</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='14' style='mso-height-source:userset;height:11.1pt'>
+<td height='14' class='x25' style='height:11.1pt;'></td>
+<td colspan='7' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>전화</td>
+<td colspan='11' rowspan='2' height='27' class='x67' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'><a name="전화" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_tel }}</span></a></td>
+<td colspan='4' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>팩스</td>
+<td colspan='11' rowspan='2' height='27' class='x68' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'><a name="팩스" ><span style='font-size:10pt;color:#000000;font-weight:400;text-decoration:none;text-line-through:none;font-family:"돋움";'>{{ data.com_fax }}</span></a></td>
+<td colspan='7' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>업태</td>
+<td colspan='11' rowspan='2' height='27' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>도,소매</td>
+<td colspan='4' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>종목</td>
+<td colspan='11' rowspan='2' height='27' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>기계부품외</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='14' style='mso-height-source:userset;height:11.1pt'>
+<td height='14' class='x25' style='height:11.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='14' style='mso-height-source:userset;height:11.1pt'>
+<td height='14' class='x25' style='height:11.1pt;'></td>
+<td colspan='7' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>합계금액</td>
+<td colspan='26' rowspan='2' height='28' class='x70' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:21.45pt;'>&#8361;{{ totalpricesum|intcomma }}</td>
+<td colspan='7' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>전화</td>
+<td colspan='11' rowspan='2' height='27' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>051-319-2332</td>
+<td colspan='4' rowspan='2' height='27' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>팩스</td>
+<td colspan='11' rowspan='2' height='27' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:20.7pt;'>051-319-2335</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='14' style='mso-height-source:userset;height:11.1pt'>
+<td height='14' class='x25' style='height:11.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>번호</td>
+<td colspan='31' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>품명 및 규격</td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>수량</td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>단위</td>
+<td colspan='9' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>단가</td>
+<td colspan='9' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>공급가액</td>
+<td colspan='9' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>세액</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>1</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ product.0}}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ count.0 }}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ unit.0}}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ price.0 |intcomma}}</td>
+<td colspan='9' class='x77'  style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ sumprice.0|intcomma }}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{{ tax.0|intcomma }} </td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>2</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.1 %}{{ product.1 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.1 %}{{ count.1 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.1 %}{{ unit.1 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.1 %}{{ price.1|intcomma }}{% endif %} </td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.1 %}{{ sumprice.1|intcomma }}{% endif %} </td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.1 %}{{ tax.1 |intcomma}}{% endif %} </td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>3</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.2 %}{{ product.2 }}{% endif %}
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.2 %}{{ count.2 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.2 %}{{ unit.2 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.2 %}{{ price.2 |intcomma}}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.2 %}{{ sumprice.2|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.2 %}{{ tax.2|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>4</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.3 %}{{ product.3 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.3 %}{{ count.3 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.3 %}{{ unit.3 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.3 %}{{ price.3|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.3 %}{{ sumprice.3|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.3 %}{{ tax.3|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>5</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.4 %}{{ product.4 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.4 %}{{ count.4 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.4 %}{{ unit.4 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.4 %}{{ price.4|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.4 %}{{ sumprice.4|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.4 %}{{ tax.4|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>6</td>
+<td colspan='31' class='x78' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.5 %}{{ product.5 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.5 %}{{ count.5 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.5 %}{{ unit.5 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.5 %}{{ price.5|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.5 %}{{ sumprice.5|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.5 %}{{ tax.5|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>7</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.6 %}{{ product.6 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.6 %}{{ count.6 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.6 %}{{ unit.6 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.6 %}{{ price.6|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.6 %}{{ sumprice.6|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.6 %}{{ tax.6|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>8</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.7 %}{{ product.7 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.7 %}{{ count.7 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.7 %}{{ unit.7 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.7 %}{{ price.7|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.7 %}{{ sumprice.7|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.7 %}{{ tax.7|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>9</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.8 %}{{ product.8 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.8 %}{{ count.8 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.8 %}{{ unit.8 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.8 %}{{ price.8|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.8 %}{{ sumprice.8|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.8 %}{{ tax.8|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>10</td>
+<td colspan='31' class='x69' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.9 %}{{ product.9 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.9 %}{{ count.9 }}{% endif %}</td>
+<td colspan='4' class='x76' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.9 %}{{ unit.9 }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.9 %}{{ price.9|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.9 %}{{ sumprice.9|intcomma }}{% endif %}</td>
+<td colspan='9' class='x77' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.9 %}{{ tax.9|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x38' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>11</td>
+<td colspan='31' class='x81' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if product.10 %}{{ product.10 }}{% endif %}</td>
+<td colspan='4' class='x82' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if count.10 %}{{ count.10 }}{% endif %}</td>
+<td colspan='4' class='x82' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if unit.10 %}{{ unit.10 }}{% endif %}</td>
+<td colspan='9' class='x83' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if price.10 %}{{ price.10|intcomma }}{% endif %}</td>
+<td colspan='9' class='x83' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if sumprice.10 %}{{ sumprice.10|intcomma }}{% endif %}</td>
+<td colspan='9' class='x83' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>{% if tax.10 %}{{ tax.10|intcomma }}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:13.5pt'>
+<td height='18' class='x25' style='height:13.5pt;'></td>
+<td colspan='8' class='x84' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>비고</td>
+<td colspan='27' class='x87' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'></td>
+<td colspan='8' class='x90' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>인수자</td>
+<td colspan='9' rowspan='2' height='35' class='x93' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.85pt;'>합계</td>
+<td colspan='9' rowspan='2' height='35' class='x94' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.85pt;'>{{ sumpricesum|intcomma}}</td>
+<td colspan='9' rowspan='2' height='35' class='x94' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;height:26.85pt;'>{{ taxsum|intcomma }}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='8' class='x84' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>계좌번호</td>
+<td colspan='27' class='x95' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'>국민은행 927437-01-010653 ㈜대하테크윈</td>
+<td colspan='8' class='x98' style='border-right:1px solid #0000FF;border-bottom:1px solid #0000FF;'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(인)</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td colspan='53' height='18' class='x25' style='mso-ignore:colspan;height:14.1pt;'></td>
+<td class='x25' align='right'></td>
+<td colspan='8' class='x25' style='mso-ignore:colspan;'></td>
+<td class='x25' align='right'></td>
+<td colspan='8' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:13.5pt'>
+<td colspan='75' height='18' class='x25' style='mso-ignore:colspan;height:13.5pt;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td colspan='75' height='18' class='x25' style='mso-ignore:colspan;height:14.1pt;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td colspan='75' height='18' class='x25' style='mso-ignore:colspan;height:14.1pt;'></td>
+ </tr>
+ <tr height='18' class='x105' style='mso-height-source:userset;height:14.1pt'>
+<td colspan='18' height='18' class='x103' style='mso-ignore:colspan;height:14.1pt;'></td>
+<td colspan='38' class='x104' style='mso-ignore:colspan;'></td>
+<td colspan='15' class='x103' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' class='x105' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x103' style='height:14.1pt;'></td>
+<td colspan='17' class='x106' style='mso-ignore:colspan;'></td>
+<td colspan='36' rowspan='2' height='37' class='x108' style='height:28.2pt;'>거래명세서 (공급자 보관용)</td>
+<td colspan='2' class='x103' style='mso-ignore:colspan;'></td>
+<td colspan='15' class='x107' style='mso-ignore:colspan;border-right:1px solid #FF0000;'></td>
+<td colspan='4' class='x103' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='17' class='x110' style='mso-ignore:colspan;'></td>
+<td colspan='17' class='x103' style='mso-ignore:colspan;border-right:1px solid #FF0000;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' class='x112' style='border-bottom:1px solid #FF0000;'>발행일자</td>
+<td class='x104'></td>
+<td colspan='4' class='x114' style='border-bottom:1px solid #FF0000;'>{{ data.aco_date|slice:":4" }}</td>
+<td colspan='2' class='x104' style='mso-ignore:colspan;'>년</td>
+<td colspan='3' class='x115' style='border-bottom:1px solid #FF0000;'>{{ data.aco_date|slice:"5:7"}}</td>
+<td colspan='2' class='x104' style='mso-ignore:colspan;'>월</td>
+<td colspan='3' class='x115' style='border-bottom:1px solid #FF0000;'>{{ data.aco_date|slice:"8:10"}}</td>
+<td colspan='2' class='x104' style='mso-ignore:colspan;'>일</td>
+<td colspan='46' class='x104' style='mso-ignore:colspan;border-right:1px solid #FF0000;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='2' rowspan='10' height='186' class='x117' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:139.5pt;'>공</br>급</br>받</br>는</br>자</td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>등록번호</td>
+<td colspan='26' rowspan='2' height='35' class='x119' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ data.com_comnum }}</td>
+<td colspan='2' rowspan='10' height='186' class='x117' style='height:139.5pt;'>공</br>급</br>자</td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;height:26.7pt;'>등록번호</td>
+<td colspan='26' rowspan='2' height='36' class='x40' width='260' style='text-align: left;border-right:1px solid #FF0000;height:27.45pt;width:195pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:2;margin-left:207px;margin-top:9px;width:86px;height:86px'><img width='86' height='86' src="{% static 'assets/img/stamp.png' %}" name='그림 2'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td colspan='26' rowspan='2' height='36' class='x167' width='260' style='height:27.45pt;width:195pt;'>606-81-67297</td></tr></table></span></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>상호</td>
+<td colspan='14' rowspan='2' height='36' class='x123' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>{{data.com_name}}</td>
+<td colspan='4' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>성명</td>
+<td colspan='8' rowspan='2' height='35' class='x126' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ data.com_ceo }}</td>
+<td colspan='7' rowspan='2' height='35' class='x128' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>상호</td>
+<td colspan='12' rowspan='2' height='36' class='x129' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>㈜대하테크윈</td>
+<td colspan='4' rowspan='2' height='36' class='x121' style='border-bottom:1px solid #FF0000;height:27.45pt;'>성명</td>
+<td colspan='10' rowspan='2' height='36' class='x123' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>황대영</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>주소</td>
+<td colspan='26' rowspan='2' height='36' class='x137' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>{{ data.com_address }}</td>
+<td colspan='7' rowspan='2' height='36' class='x136' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>주소</td>
+<td colspan='26' rowspan='2' height='36' class='x140' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:27.45pt;'>부산 사상 괘법578 산업용품상가 4-107</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>전화</td>
+<td colspan='11' rowspan='2' height='35' class='x149' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ data.com_tel }}</td>
+<td colspan='4' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>팩스</td>
+<td colspan='11' rowspan='2' height='35' class='x149' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ data.com_fax }}</td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>업태</td>
+<td colspan='11' rowspan='2' height='35' class='x150' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>도,소매</td>
+<td colspan='4' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>종목</td>
+<td colspan='11' rowspan='2' height='35' class='x150' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>기계부품외</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;height:26.7pt;'>합계금액</td>
+<td colspan='26' rowspan='2' height='35' class='x151' style='border-right:1px solid #FF0000;height:26.7pt;'>&#8361;{{ totalpricesum|intcomma }}</td>
+<td colspan='7' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;height:26.7pt;'>전화</td>
+<td colspan='11' rowspan='2' height='35' class='x150' style='border-right:1px solid #FF0000;height:26.7pt;'>051-319-2332</td>
+<td colspan='4' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;height:26.7pt;'>팩스</td>
+<td colspan='11' rowspan='2' height='35' class='x150' style='border-right:1px solid #FF0000;height:26.7pt;'>051-319-2335</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>번호</td>
+<td colspan='31' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>품명 및 규격</td>
+<td colspan='4' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>수량</td>
+<td colspan='4' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>단위</td>
+<td colspan='9' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>단가</td>
+<td colspan='9' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>공급가액</td>
+<td colspan='9' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>세액</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>1</td>
+<td colspan='31' class='x149' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ product.0}}</td>
+<td colspan='4' class='x156' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ count.0 }}</td>
+<td colspan='4' class='x156' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ unit.0}}</td>
+<td colspan='9' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ price.0 |intcomma}}</td>
+<td colspan='9' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ sumprice.0|intcomma }}</td>
+<td colspan='9' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{{ tax.0|intcomma }} </td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>2</td>
+<td colspan='31' class='x149' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.1 %}{{ product.1 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.1 %}{{ count.1 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.1 %}{{ unit.1 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.1 %}{{ price.1|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.1 %}{{ sumprice.1|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.1 %}{{ tax.1 |intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>3</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.2 %}{{ product.2 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.2 %}{{ count.2 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.2 %}{{ unit.2 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.2 %}{{ price.2|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.2 %}{{ sumprice.2|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.2 %}{{ tax.2|intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>4</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.3 %}{{ product.3 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.3 %}{{ count.3 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.3 %}{{ unit.3 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.3 %}{{ price.3|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.3 %}{{ sumprice.3|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.3 %}{{ tax.3|intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>5</td>
+<td colspan='31' class='x158'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.4 %}{{ product.4 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.4 %}{{ count.4 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.4 %}{{ unit.4 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.4 %}{{ price.4|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.4 %}{{ sumprice.4|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.4%}{{ tax.4 |intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>6</td>
+<td colspan='31' class='x149' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.5 %}{{ product.5 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.5 %}{{ count.5 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.5 %}{{ unit.5 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.5 %}{{ price.5|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.5 %}{{ sumprice.5|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.5 %}{{ tax.5 |intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>7</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.6 %}{{ product.6 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.6 %}{{ count.6 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.6 %}{{ unit.6 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.6 %}{{ price.6|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.6 %}{{ sumprice.6|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.6 %}{{ tax.6 |intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>8</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.7 %}{{ product.7 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.7 %}{{ count.7 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.7 %}{{ unit.7 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.7 %}{{ price.7|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.7 %}{{ sumprice.7|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.7%}{{ tax.7|intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>9</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.8 %}{{ product.8 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.8 %}{{ count.8 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.8 %}{{ unit.8 }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.8 %}{{ price.8|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.8 %}{{ sumprice.8|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.8 %}{{ tax.8|intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x118' style='border-bottom:1px solid #FF0000;'>10</td>
+<td colspan='31' class='x149'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if product.9 %}{{ product.9 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if count.9 %}{{ count.9 }}{% endif %}</td>
+<td colspan='4' class='x156'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if unit.9 %}{{ unit.9 }}{% endif %}</td>
+<td colspan='9' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if price.9 %}{{ price.9|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if sumprice.9 %}{{ sumprice.9|intcomma }}{% endif %}</td>
+<td colspan='9' class='x157'  style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>{% if tax.9 %}{{ tax.9|intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='4' class='x121'>11</td>
+<td colspan='31' class='x161'  style='border-right:1px solid #FF0000;'>{% if product.10 %}{{ product.10 }}{% endif %}</td>
+<td colspan='4' class='x162'  style='border-right:1px solid #FF0000;'>{% if count.10 %}{{ count.10 }}{% endif %}</td>
+<td colspan='4' class='x162' style='border-right:1px solid #FF0000;'>{% if unit.10 %}{{ unit.10 }}{% endif %}</td>
+<td colspan='9' class='x163'  style='border-right:1px solid #FF0000;'>{% if price.10 %}{{ price.10|intcomma }}{% endif %}</td>
+<td colspan='9' class='x163' style='border-right:1px solid #FF0000;'>{% if sumprice.10 %}{{ sumprice.10|intcomma }}{% endif %}</td>
+<td colspan='9' class='x163'  style='border-right:1px solid #FF0000;'>{% if tax.10 %}{{ tax.10 |intcomma}}{% endif %}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='8' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>비고</td>
+<td colspan='27' class='x164' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'></td>
+<td colspan='8' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>인수자</td>
+<td colspan='9' rowspan='2' height='35' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>합계</td>
+<td colspan='9' rowspan='2' height='35' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ sumpricesum|intcomma}}</td>
+<td colspan='9' rowspan='2' height='35' class='x157' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;height:26.7pt;'>{{ taxsum|intcomma }}</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+ <tr height='18' style='mso-height-source:userset;height:14.1pt'>
+<td height='18' class='x25' style='height:14.1pt;'></td>
+<td colspan='8' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>계좌번호</td>
+<td colspan='27' class='x156' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'>국민은행 927437-01-010653 ㈜대하테크윈</td>
+<td colspan='8' class='x118' style='border-right:1px solid #FF0000;border-bottom:1px solid #FF0000;'><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>(인)</td>
+<td colspan='4' class='x25' style='mso-ignore:colspan;'></td>
+ </tr>
+<![if supportMisalignedColumns]>
+ <tr height='0' style='display:none'>
+  <td width='80' colspan='8' style='width:60pt;mso-ignore:colspan;'></td>
+  <td width='22' colspan='2' style='width:16.5pt;mso-ignore:colspan;'></td>
+  <td width='620' colspan='62' style='width:465pt;mso-ignore:colspan;'></td>
+  <td width='30' colspan='3' style='width:22.5pt;mso-ignore:colspan;'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+<style>
+<!--
+.x167
+ {
+ mso-number-format:General;
+ text-align:center;
+ vertical-align:middle;
+ white-space:nowrap;
+
+ mso-pattern:auto;
+ font-size:13pt;
+ font-weight:400;
+ font-style:normal;
+ font-family:"돋움","monospace";
+ mso-protection:locked visible;
+ }
+-->
+</style>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+ {% if messages %}
+{% for message in messages %}
+    <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+{% endfor %}
+    {% endif %}
+{#<h1>{{ data.id}}</h1>#}
+
+{#    <form action="/company/{{ data.id }}/" data-method="PUT" enctype="multipart/form-data" class="form-horizontal" novalidate="">#}
+    <form action="/company/{{ data.id }}/" method="POST" >
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">수정</button>
+    </form>
+{#<div class="mt-4 mb-0">#}
+{#    <div class="d-grid">#}
+<hr>
+        <button id="deleteCom" class="btn btn btn-outline-secondary" value="{{ data.id }}">삭제</button>
+{#    </div>#}
+{#</div>#}
+</div>
+{% endblock %}

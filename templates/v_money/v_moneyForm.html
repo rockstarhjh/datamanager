@@ -1,0 +1,37 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+ {% if messages %}
+{% for message in messages %}
+    <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+{% endfor %}
+    {% endif %}
+{#<h1>{{ data.idstocks}}</h1>#}
+    <form action="/v_money/{{ data.id_v_money }}/" method="POST" >
+        {% csrf_token %}
+    <label for="inputFirstName" style = "display: none">{{ form.id_v_money.label}}</label>
+         {{ form.id_v_money}}
+{#    <input type="hidden" name="idproducts" class="form-control" id="id_idproducts">#}
+     <label for="inputFirstName">{{ form.date.label}}</label>
+         {{ form.date|add_class:"datepicker"}}
+    <label for="inputFirstName">{{ form.deposit.label}}</label>
+         {{ form.deposit}}
+    <label for="inputFirstName">{{ form.expense.label}}</label>
+         {{ form.expense}}
+    <label for="inputFirstName">{{ form.remark.label}}</label>
+         {{ form.remark}}
+    <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">수정</button>
+    </form>
+<hr>
+        <button id="deleteVMoney" class="btn btn btn-outline-secondary" value="{{ data.id_v_money }}">삭제</button>
+</div>
+
+{% endblock %}

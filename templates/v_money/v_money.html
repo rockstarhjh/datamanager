@@ -1,0 +1,75 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+<div class="container-fluid px-4">
+<div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa-regular fa-circle-exclamation"></i>
+    </button>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<button id="btn_toggle" class="nav-link collapsed btn btn-outline-secondary"><i class="fa-sharp fa-solid fa-pen"></i>시재금변동 등록하기</button>
+<div id="Toggle" style="display:none" class="collapse">
+<div class="col-xl-8">
+    <form action="/v_money/" method="POST" >
+        {% csrf_token %}
+    <label for="inputFirstName" style = "display: none">{{ form.id_v_money.label}}</label>
+         {{ form.id_v_money}}
+{#    <input type="hidden" name="idproducts" class="form-control" id="id_idproducts">#}
+     <label for="inputFirstName">{{ form.date.label}}</label>
+         {{ form.date|add_class:"datepicker"}}
+    <label for="inputFirstName">{{ form.deposit.label}}</label>
+         {{ form.deposit}}
+    <label for="inputFirstName">{{ form.expense.label}}</label>
+         {{ form.expense}}
+    <label for="inputFirstName">{{ form.remark.label}}</label>
+         {{ form.remark}}
+    <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">등록</button>
+    </form>
+</div>
+</div>
+    <hr>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            시재금내역
+            <span class="float-end" id ="sumspan">
+            <span class="" id="v_money_sum">총금액 : {{ sum |intcomma}} 원</span>
+        </span>
+        </div>
+        <div class="card-body">
+           <table id="v_moneyTable" class="cell-border stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>날짜</th>
+                        <th>충전</th>
+                        <th>지출</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <th>아이디</th>
+                        <th>날짜</th>
+                        <th>충전</th>
+                        <th>지출</th>
+                        <th>내용</th>
+                    </tr>
+                </tfoot>
+           </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

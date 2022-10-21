@@ -1,0 +1,50 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+<div class="container-fluid px-4">
+<div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fa-regular fa-circle-exclamation"></i>
+    </button>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+            현 재고 현황
+        </div>
+        <div class="card-body">
+           <table id="productsTable" class="cell-border stripe" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>아이디</th>
+                        <th>카테고리</th>
+                        <th>제품명</th>
+                        <th>사무실</th>
+                        <th>창고</th>
+                        <th>총재고</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                         <th>아이디</th>
+                        <th>카테고리</th>
+                        <th>제품명</th>
+                        <th>사무실</th>
+                        <th>창고</th>
+                        <th>총재고</th>
+                    </tr>
+                </tfoot>
+           </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

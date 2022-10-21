@@ -1,0 +1,222 @@
+{% extends 'datamanager/base2.html' %}
+{% load rest_framework %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4">
+{% if messages %}
+{% for message in messages %}
+    <div class="alert {{ message.tags }} alert-auto-dismissible alert-dismissible notification-container text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+    </div>
+{% endfor %}
+{% endif %}
+{#<h1>{{ data.id}}</h1>#}
+
+{#    <form action="/company/{{ data.id }}/" data-method="PUT" enctype="multipart/form-data" class="form-horizontal" novalidate="">#}
+    <form action="/acount/{{ data.id }}/" method="POST" >
+
+        {% csrf_token %}
+         <label for="inputFirstName">{{ form.date.label}}</label>
+         {{ form.date|add_class:"datepicker"}}
+    <label for="inputFirstName">{{ form.company.label}}</label>
+    <div class="search-box">
+        <button type="button" id="btn_com"><i class="fa-solid fa-magnifying-glass"></i></button>
+         {{ form.company}}
+    </div>
+    <label for="inputFirstName">{{ form.product.label}}</label>
+    <div class="search-box">
+        <button type="button" id="btn_product"><i class="fa-solid fa-magnifying-glass"></i></button>
+         {{ form.product}}
+    </div>
+    <label for="inputFirstName">{{ form.count.label}}</label>
+         {{ form.count}}
+    <label for="inputFirstName">{{ form.unit.label}}</label>
+         {{ form.unit}}
+    <label for="inputFirstName">{{ form.price.label}}</label>
+    <div class="search-box">
+        <button type="button" id="btn_price"><i class="fa-solid fa-magnifying-glass"></i></button>
+         {{ form.price}}
+    </div>
+    <label for="inputFirstName">{{ form.sumprice.label}}</label>
+         {{ form.sumprice}}
+    <label for="inputFirstName">{{ form.tax.label}}</label>
+         {{ form.tax}}
+    <label for="inputFirstName">{{ form.totalprice.label}}</label>
+         {{ form.totalprice}}
+    <label for="inputFirstName">{{ form.division.label}}</label>
+         {{ form.division}}
+    <label for="inputFirstName">{{ form.paymethod.label}}</label>
+         {{ form.paymethod}}
+    <label for="inputFirstName">{{ form.inoutcompany.label}}</label>
+    <div class="search-box">
+        <button type="button" id="btn_inoutcompany"><i class="fa-solid fa-magnifying-glass"></i></button>
+         {{ form.inoutcompany}}
+    </div>
+    <label for="inputFirstName">{{ form.incomeprice.label}}</label>
+         {{ form.incomeprice}}
+    <label for="inputFirstName">{{ form.remark.label}}</label>
+         {{ form.remark}}
+        <button class="btn btn-primary js-tooltip" title="" data-original-title="Make a PUT request on the Com Model Instance resource">수정</button>
+    </form>
+{#<div class="mt-4 mb-0">#}
+{#    <div class="d-grid">#}
+<hr>
+        <button id="deleteAco" class="btn btn btn-outline-secondary" value="{{ data.id }}">삭제</button>
+{#    </div>#}
+{#</div>#}
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">검색된 거래처</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="comModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>상호</th>
+                    <th>사업자번호</th>
+{#                    <th>팩스</th>#}
+{#                    <th>주소</th>#}
+{#                    <th>배달정보</th>#}
+{#                    <th>이메일</th>#}
+{#                    <th>구분</th>#}
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>아이디</th>
+                    <th>상호</th>
+                    <th>사업자번호</th>
+{#                    <th>팩스</th>#}
+{#                    <th>주소</th>#}
+{#                    <th>배달정보</th>#}
+{#                    <th>이메일</th>#}
+{#                    <th>구분</th>#}
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">검색된 제품명</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="productModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>제품명</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>제품명</th>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">일자별 거래단가</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="priceModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>거래일자</th>
+                    <th>거래처</th>
+                    <th>제품명</th>
+                    <th>단가</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>거래일자</th>
+                    <th>거래처</th>
+                    <th>제품명</th>
+                    <th>단가</th>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">매입처/매출처</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table id="inoutComModal" class="cell-border stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th>거래일자</th>
+                    <th>거래처</th>
+                    <th>제품명</th>
+                    <th>단가</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>거래일자</th>
+                    <th>거래처</th>
+                    <th>제품명</th>
+                    <th>단가</th>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+{#        <button type="button" class="btn btn-primary">Save changes</button>#}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
